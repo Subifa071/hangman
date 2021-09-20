@@ -19,6 +19,7 @@ The functionalities of the game "BRUTAL HANGMAN" are mentioned below:
    Subifa Maharjan<br>
    Student ID: 210270<br>
    Coventry ID:11781475<br>
+  Contact: <a href="mailto: subifamhrzn@gmail.com">subifamhrzn@gmail.com </a><br>
   <h5><i>Future Work:</h5>
   <ol type= a start=1>
     <li>Connect with other players online
