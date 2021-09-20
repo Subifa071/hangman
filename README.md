@@ -15,7 +15,7 @@ The functionalities of the game "BRUTAL HANGMAN" are mentioned below:
          </ol>
 
   <p align = "center"><img src="https://media2.giphy.com/media/ybQIv0CsYm1XY9A8Dm/giphy.gif?cid=ecf05e47g58yq2u5mfswoe4r2ydbvoc2hjgdea6gc64iomef&rid=giphy.gif&ct=g" width="600">  
- <strong><h4> About Myself:-</h4></strong>
+ <strong><h4> ABOUT MYSELF:-</h4></strong>
    Subifa Maharjan<br>
    Student ID: 210270<br>
    Coventry ID:11781475<br>
