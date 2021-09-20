@@ -22,7 +22,7 @@ The functionalities of the game "BRUTAL HANGMAN" are mentioned below:
   <h5><i>Future Work:</h5>
   <ol type= a start=1>
     <li>Connect with other players online
-    <li>Selection level of brutality
+    <li>Selection of level of brutality
     <li>Sound Control
     <li>Scoreboard
     </ol></i>
