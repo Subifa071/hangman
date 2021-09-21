@@ -1,5 +1,5 @@
 <strong> <h1><p align="center"> BRUTAL HANGMAN </h1></strong>
-<p align = "center"><img src="https://github.com/Subifa071/projectHangman/blob/main/Hangman%20Style.jpg" >
+<p align = "center"><img src="https://github.com/Subifa071/hangman/blob/main/Hangman%20Style.jpg" >
   <br>
 <h2>INTRODUCTION</h2>
 Hangman is a simple, traditional hangman game with a hint of raw humor. The game 
