@@ -7,6 +7,7 @@ from pygame import mixer
 
 window = Tk()
 window.title("Hangman")
+window.iconbitmap("death.ico")
 window.resizable(width=False, height=False)
 pygame.mixer.pre_init(3400, -16, 1, 512)
 mixer.init()
@@ -19,19 +20,23 @@ win_fx.set_volume(50)
 lose_fx = pygame.mixer.Sound("lose.wav")
 lose_fx.set_volume(50)
 
+word_list=["RUSSIA", "ARGENTINA", "MEXICO", "COLOMBIA", "KAZAKHSTAN", "GERMANY", "TURKEY", "HUNGARY", "FINLAND",
+             "INDIA", "CHINA", "SWEDEN",
+             "MONGOLIA", "MOROCCO", "NORWAY", "CHILE", "IRELAND", "ICELAND", "CROATIA", "ESTONIA", "SPAIN", "NIGERIA",
+             "JAPAN", "UKRAINE", "ALGERIA"]
 
-word_list = []
+"""word_list = []
 with open("words.txt") as f:
     for line in f:
-        word_list.append(line.strip())
+        word_list.append(line.strip())"""
 
 
-photos = (PhotoImage(file="E:/images/hang0.png"), PhotoImage(file="E:/images/hang1.png"), PhotoImage(file="E:/images/hang2.png"),
-PhotoImage(file="E:/images/hang3.png"),
-PhotoImage(file="E:/images/hang4.png"), PhotoImage(file="E:/images/hang5.png"), PhotoImage(file="E:/images/hang6.png"),
-PhotoImage(file="E:/images/hang7.png"),
-PhotoImage(file="E:/images/hang8.png"), PhotoImage(file="E:/images/hang9.png"),
-PhotoImage(file="E:/images/hang10.png"), PhotoImage(file="E:/images/hang11.png"))
+photos = (PhotoImage(file="hang0.png"), PhotoImage(file="hang1.png"), PhotoImage(file="hang2.png"),
+PhotoImage(file="hang3.png"),
+PhotoImage(file="hang4.png"), PhotoImage(file="hang5.png"), PhotoImage(file="hang6.png"),
+PhotoImage(file="hang7.png"),
+PhotoImage(file="hang8.png"), PhotoImage(file="hang9.png"),
+PhotoImage(file="hang10.png"), PhotoImage(file="hang11.png"))
 
 
 def newGame():
