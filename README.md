@@ -2,10 +2,10 @@
 <p align = "center"><img src="https://github.com/Subifa071/hangman/blob/main/Hangman%20Style.jpg" >
   <br>
 <h2>INTRODUCTION</h2>
-Hangman is a simple, traditional hangman game with a hint of raw humor. The game 
+Hangman is a simple, traditional hangman game with a hint of raw humor.It can be played between two or more players. The game 
 consists of guessing a word through the discovery of the letters that make it up, whether they 
 are vowels or consonants, but if we fail to do so with every mistake, our subject on the screen 
-will risk being hanged or maybe worse.
+will risk being hanged.
 <h3>FEATURES</h3>
 The functionalities of the game "BRUTAL HANGMAN" are mentioned below:
 <ol type=i start=1>    
