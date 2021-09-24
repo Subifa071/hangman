@@ -2,9 +2,9 @@ import tkinter
 from tkinter import *
 from tkinter import messagebox
 import sys
-from hangman import newGame
+from hangman import game
 
-root = tkinter.Toplevel()
+root = tkinter.Tk()
 root.title("H_ngm_n")
 root.iconbitmap("death.ico")
 root.geometry("800x600")
@@ -30,7 +30,7 @@ def alert():
 
 
 #Creating Start Button
-start_button = Button(root, text="START",  bd=0, bg="wheat",fg="black", font=("Chocolate Covered Raindrops Bol", 22, 'bold'), width=15, height=2,command = newGame)
+start_button = Button(root, text="START",  bd=0, bg="wheat",fg="black", font=("Chocolate Covered Raindrops Bol", 22, 'bold'), width=15, height=2,command = game)
 start_window = my_canvas.create_window(210, 150, anchor="nw", window=start_button)
 
 
