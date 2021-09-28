@@ -15,6 +15,19 @@ The functionalities of the game "BRUTAL HANGMAN" are mentioned below:
          </ol>
 
   <p align = "center"><img src="https://media2.giphy.com/media/ybQIv0CsYm1XY9A8Dm/giphy.gif?cid=ecf05e47g58yq2u5mfswoe4r2ydbvoc2hjgdea6gc64iomef&rid=giphy.gif&ct=g" width="600">  
+
+ ## Tools Used
+The tools I have used for this project are as shown below:
+- [PyCharm](https://www.jetbrains.com/pycharm/) to use the IDE’s features to execute the code.
+- [Python](https://www.python.org/) for making this game project.
+- [Pygame](https://www.pygame.org/wiki/GettingStarted) to support all the game functionalities. 
+- [Piktochart](https://piktochart.com/) for creating infographics.
+- [Mp3 Cutter](https://mp3cut.net/) to modify sound effects.
+  
+ ## Links
+The links you can go through:
+  - If you get any issues please contact subifamhrzn@gmail.com directly
+    my@email.com . We value your effort to improve this project!
  <strong><h4> ABOUT MYSELF:-</h4></strong>
    Subifa Maharjan<br>
    Student ID: 210270<br>
