@@ -11,7 +11,7 @@ The functionalities of the game "H_NGM_N" are mentioned below:
 <ol type=i start=1>    
   <li> This game can be played offline.
     <li> This can be played either with the host or a friend.
-      <li> The user is allowed to use hint option thrice according to his/her choice.
+      <li> The user is allowed to use hint option thrice depending upon his/her choice.
          </ol>
 
   <p align = "center"><img src="https://media2.giphy.com/media/ybQIv0CsYm1XY9A8Dm/giphy.gif?cid=ecf05e47g58yq2u5mfswoe4r2ydbvoc2hjgdea6gc64iomef&rid=giphy.gif&ct=g" width="600">  
