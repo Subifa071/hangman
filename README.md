@@ -1,17 +1,17 @@
-<strong> <h1><p align="center"> BRUTAL HANGMAN </h1></strong>
+<strong> <h1><p align="center"> H_NGM_N </h1></strong>
 <p align = "center"><img src="https://github.com/Subifa071/hangman/blob/main/Hangman%20Style.jpg" >
   <br>
 <h2>INTRODUCTION</h2>
-Hangman is a simple, traditional hangman game with a hint of raw humor.It can be played between two or more players. The game 
+Hangman is a simple, traditional hangman game with a hint of raw humor. The game 
 consists of guessing a word through the discovery of the letters that make it up, whether they 
 are vowels or consonants, but if we fail to do so with every mistake, our subject on the screen 
 will risk being hanged.
 <h3>FEATURES</h3>
-The functionalities of the game "BRUTAL HANGMAN" are mentioned below:
+The functionalities of the game "H_NGM_N" are mentioned below:
 <ol type=i start=1>    
   <li> This game can be played offline.
     <li> This can be played either with the host or a friend.
-      <li> The level of barbarity can be selected as per user’s preference.
+      <li> The user is allowed to use hint option thrice according to his/her choice.
          </ol>
 
   <p align = "center"><img src="https://media2.giphy.com/media/ybQIv0CsYm1XY9A8Dm/giphy.gif?cid=ecf05e47g58yq2u5mfswoe4r2ydbvoc2hjgdea6gc64iomef&rid=giphy.gif&ct=g" width="600">  
