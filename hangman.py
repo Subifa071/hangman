@@ -22,14 +22,13 @@ def play_music():
     global music_state
     if music_state:
         pygame.mixer.music.stop()
-
     else:
         pygame.mixer.music.load("game.mp3")
         pygame.mixer.music.play(loops=0)
         music_state = not music_state  # if it is in the same line of else music wont stop even if we close tha game
 
-
 def main_menu_():
+    """MAKE YOUR GUESSING GAME STRONG!"""
     root.deiconify()
 
     global main_menu_bg
@@ -48,17 +47,19 @@ def main_menu_():
     canvas.create_image(0, 0, anchor=NW, image=main_menu_bg)
 
     # Add buttons to canvas
-    start_btn = Button(root, text="New Game", bg="bisque", font=('chocolate covered raindrops bol',17), width=25, command=new_game, borderwidth=5)
+    start_btn = Button(root, text="New Game", bg="bisque", font=('chocolate covered raindrops bol', 17), width=25, command=new_game, borderwidth=5)
     canvas.create_window(500, 150, anchor=E, window=start_btn)
 
-    score_btn = Button(root, text="Score Board", bg="bisque", font=('chocolate covered raindrops bol',17), width=25, command=score_board, borderwidth=5)
+    score_btn = Button(root, text="Score Board", bg="bisque", font=('chocolate covered raindrops bol', 17), width=25, command=score_board, borderwidth=5)
     canvas.create_window(500, 210, anchor=E, window=score_btn)
 
-    quit_btn = Button(root, text="Quit", bg="bisque", font=('chocolate covered raindrops bol',17), width=25, command=quit_game, borderwidth=5)
+    quit_btn = Button(root, text="Quit", bg="bisque", font=('chocolate covered raindrops bol', 17), width=25, command=quit_game, borderwidth=5)
     canvas.create_window(500, 270, anchor=E, window=quit_btn)
 
-    sound_btn = Button(root, text="Sound", font=('chocolate covered raindrops bol',15), width=6, command=play_music)
+    sound_btn = Button(root, text="Sound", font=('chocolate covered raindrops bol', 15), width=6, command=play_music)
     canvas.create_window(770, 380, anchor=SE, window=sound_btn)
+
+    print(main_menu_.__doc__)
 
 
 def new_game():
@@ -84,7 +85,7 @@ def new_game():
 
     instructions_lbl = Label(new_game_window, text="There are 4 different categories.\n"
                                                    "Choose as many as you'd like,"
-                                                   "\nbut do choose wisely, this is not going to be easy!",bg="#a5a0b6",font=('chocolate covered raindrops bol',15),width=40)
+                                                   "\nbut do choose wisely, this is not going to be easy!", bg="#a5a0b6", font=('chocolate covered raindrops bol', 15), width=40)
     canvas_new_game.create_window(400, 60, anchor=CENTER, window=instructions_lbl)
 
     # Will help knowing which categories were chosen
@@ -93,29 +94,26 @@ def new_game():
     var3 = StringVar(value="")
     var4 = StringVar(value="")
 
-    books_btn = Checkbutton(new_game_window, text="Books", font=('chocolate covered raindrops bol',15), variable=var1, onvalue="b", offvalue="")
+    books_btn = Checkbutton(new_game_window, text="Books", font=('chocolate covered raindrops bol', 15), variable=var1, onvalue="b", offvalue="")
     canvas_new_game.create_window(340, 120, anchor=CENTER, window=books_btn)
-    games_btn = Checkbutton(new_game_window, text="Games", font=('chocolate covered raindrops bol',15), variable=var2, onvalue="g", offvalue="")
+    games_btn = Checkbutton(new_game_window, text="Games", font=('chocolate covered raindrops bol', 15), variable=var2, onvalue="g", offvalue="")
     canvas_new_game.create_window(440, 120, anchor=CENTER, window=games_btn)
-    movies_btn = Checkbutton(new_game_window, text="Movies", font=('chocolate covered raindrops bol',15), variable=var3, onvalue="m", offvalue="")
+    movies_btn = Checkbutton(new_game_window, text="Movies", font=('chocolate covered raindrops bol', 15), variable=var3, onvalue="m", offvalue="")
     canvas_new_game.create_window(340, 170, anchor=CENTER, window=movies_btn)
-    tv_btn = Checkbutton(new_game_window, text="TV-Shows", font=('chocolate covered raindrops bol',15), variable=var4, onvalue="t", offvalue="")
+    tv_btn = Checkbutton(new_game_window, text="TV-Shows", font=('chocolate covered raindrops bol', 15), variable=var4, onvalue="t", offvalue="")
     canvas_new_game.create_window(440, 170, anchor=CENTER, window=tv_btn)
 
-    start_new_game_btn = Button(new_game_window, text="Start new game", font=('chocolate covered raindrops bol',15), width=15,
-                                command=lambda: [prepare(var1.get() + var2.get() + var3.get() + var4.get())]
-                                , borderwidth=5)
+    start_new_game_btn = Button(new_game_window, text="Start new game", font=('chocolate covered raindrops bol', 15), width=15,
+                                command=lambda: [prepare(var1.get() + var2.get() + var3.get() + var4.get())], borderwidth=5)
     canvas_new_game.create_window(390, 220, anchor=CENTER, window=start_new_game_btn)
 
-    back_menu_btn = Button(new_game_window, text="Back", font=('chocolate covered raindrops bol',15), width=15, command=lambda: [main_menu_(),
-                                                                                         new_game_window.destroy()]
-                           , borderwidth=5)
+    back_menu_btn = Button(new_game_window, text="Back", font=('chocolate covered raindrops bol', 15), width=15, command=lambda: [main_menu_(), new_game_window.destroy()], borderwidth=5)
     canvas_new_game.create_window(390, 260, anchor=CENTER, window=back_menu_btn)
 
-    quit_game_btn = Button(new_game_window, text="Quit game", font=('chocolate covered raindrops bol',15), width=15, command=quit_game,borderwidth=5)
+    quit_game_btn = Button(new_game_window, text="Quit game", font=('chocolate covered raindrops bol', 15), width=15, command=quit_game, borderwidth=5)
     canvas_new_game.create_window(390, 300, anchor=CENTER, window=quit_game_btn)
 
-    sound_btn = Button(new_game_window, text="Sound", font=('chocolate covered raindrops bol',15), width=6, command=play_music)
+    sound_btn = Button(new_game_window, text="Sound", font=('chocolate covered raindrops bol', 15), width=6, command=play_music)
     canvas_new_game.create_window(770, 380, anchor=CENTER, window=sound_btn)
 
 
@@ -328,16 +326,16 @@ def assistance():
         option_text = ("Choose an option:\nA) Change word (uses left: " + str(word_change)
                        + ")\nB) Letter helper (uses left: " + str(letter_change) + ")")
 
-        option_lbl = Label(option_window, text=option_text,font=('chocolate covered raindrops bol',15), bg="bisque")
+        option_lbl = Label(option_window, text=option_text, font=('chocolate covered raindrops bol', 15), bg="bisque")
         canvas_option.create_window(135, 55, anchor=CENTER, window=option_lbl)
 
-        option_a_btn = Button(option_window, text="Option A",font=('chocolate covered raindrops bol',15), borderwidth=5, command=option_a)
+        option_a_btn = Button(option_window, text="Option A", font=('chocolate covered raindrops bol', 15), borderwidth=5, command=option_a)
         canvas_option.create_window(85, 150, anchor=CENTER, window=option_a_btn)
 
-        option_b_btn = Button(option_window, text="Option B",font=('chocolate covered raindrops bol',15), borderwidth=5, command=option_b)
+        option_b_btn = Button(option_window, text="Option B", font=('chocolate covered raindrops bol', 15), borderwidth=5, command=option_b)
         canvas_option.create_window(185, 150, anchor=CENTER, window=option_b_btn)
 
-        cancel_btn = Button(option_window, text="Nah... I don't need any help",font=('chocolate covered raindrops bol',15), borderwidth=5,
+        cancel_btn = Button(option_window, text="Nah... I don't need any help", font=('chocolate covered raindrops bol', 15), borderwidth=5,
                             command=close_window)
         canvas_option.create_window(135, 195, anchor=CENTER, window=cancel_btn)
 
@@ -414,7 +412,7 @@ def my_answer():
                     quit_game()
                 else:
                     word_change = 2  # if the user lost the game and wishes to play again, the assistance options (letter change and word change) don't reset, so added: word_change and letter_change
-                    letter_change=1
+                    letter_change = 1
                     new_game_window.destroy()
                     play_window.destroy()
                     root.deiconify()
@@ -422,18 +420,18 @@ def my_answer():
     e.delete(0, "end")
 
     list_chars_bank = list(chars_bank)
-    bank_lbl = Label(play_window, text="Used characters bank:\n" + " ".join(list_chars_bank).upper(), font=('chocolate covered raindrops bol',15))
+    bank_lbl = Label(play_window, text="Used characters bank:\n" + " ".join(list_chars_bank).upper(), font=('chocolate covered raindrops bol', 15))
     canvas_play.create_window(70, 270, anchor=CENTER, window=bank_lbl)
 
-    underlines_lbl = Label(play_window, text=" ".join(under_lines),font=('chocolate covered raindrops bol',15))
+    underlines_lbl = Label(play_window, text=" ".join(under_lines), font=('chocolate covered raindrops bol', 15))
     canvas_play.create_window(400, 310, anchor=CENTER, window=underlines_lbl)
 
-    guesses_lbl = Label(play_window, text="You have " + str(guesses) + " guesses left",font=('chocolate covered raindrops bol',15))
+    guesses_lbl = Label(play_window, text="You have " + str(guesses) + " guesses left", font=('chocolate covered raindrops bol', 15))
     canvas_play.create_window(400, 340, anchor=CENTER, window=guesses_lbl)
 
 
-
 def play(hidden, word, count):
+    """GOOD LUCK!"""
     new_game_window.withdraw()
     global play_bg
     global play_window
@@ -483,40 +481,42 @@ def play(hidden, word, count):
     upper_word_list = list(upper_word)
     chars_bank = ""
 
-    letters_left_lbl = Label(play_window, text=str(counter) + " letters left to solve the word",font=('chocolate covered raindrops bol',17))
+    letters_left_lbl = Label(play_window, text=str(counter) + " letters left to solve the word", font=('chocolate covered raindrops bol', 17))
     canvas_play.create_window(400, 370, anchor=CENTER, window=letters_left_lbl)
 
-    underlines_lbl = Label(play_window, text=" ".join(under_lines),font=('chocolate covered raindrops bol',15))
+    underlines_lbl = Label(play_window, text=" ".join(under_lines), font=('chocolate covered raindrops bol', 15))
     canvas_play.create_window(400, 310, anchor=CENTER, window=underlines_lbl)
 
-    guesses_lbl = Label(play_window, text="You have " + str(guesses) + " guesses left",font=('chocolate covered raindrops bol',17))
+    guesses_lbl = Label(play_window, text="You have " + str(guesses) + " guesses left", font=('chocolate covered raindrops bol', 17))
     canvas_play.create_window(400, 340, anchor=CENTER, window=guesses_lbl)
 
-    bank_lbl = Label(play_window, text="Used characters bank:\n" + " ".join(list_chars_bank).upper(),font=('chocolate covered raindrops bol',15))
+    bank_lbl = Label(play_window, text="Used characters bank:\n" + " ".join(list_chars_bank).upper(),
+                     font=('chocolate covered raindrops bol', 15))
     canvas_play.create_window(70, 270, anchor=CENTER, window=bank_lbl)
 
-    back_menu_btn_ = Button(play_window, text="Main Menu",font=('chocolate covered raindrops bol',15), borderwidth=5, width=15,
+    back_menu_btn_ = Button(play_window, text="Main Menu", font=('chocolate covered raindrops bol', 15), borderwidth=5, width=15,
                             command=lambda: [main_menu_(),
                                              play_window.destroy(),
                                              new_game_window.destroy()])
     canvas_play.create_window(70, 370, anchor=CENTER, window=back_menu_btn_)
 
-
     e = Entry(play_window, width=4, borderwidth=2)
     canvas_play.create_window(380, 250, anchor=CENTER, window=e)
 
-    assistance_btn = Button(play_window, text="Other options",font=('chocolate covered raindrops bol',15), width=15, borderwidth=5, command=assistance)
+    assistance_btn = Button(play_window, text="Other options", font=('chocolate covered raindrops bol', 15), width=15, borderwidth=5, command=assistance)
     canvas_play.create_window(70, 30, anchor=SW, window=assistance_btn)
 
-    input_answer = Button(play_window, text="Confirm",font=('chocolate covered raindrops bol',15), command=my_answer, borderwidth=5)
+    input_answer = Button(play_window, text="Confirm", font=('chocolate covered raindrops bol', 15), command=my_answer, borderwidth=5)
     canvas_play.create_window(430, 250, anchor=CENTER, window=input_answer)
 
-    sound_btn = Button(play_window, text="Sound",font=('chocolate covered raindrops bol',15), width=6, command=play_music)
+    sound_btn = Button(play_window, text="Sound", font=('chocolate covered raindrops bol', 15), width=6, command=play_music)
     canvas_play.create_window(770, 380, anchor=CENTER, window=sound_btn)
+
+    print(play.__doc__)
+
 
 def score_board():
     return
-
 
 def quit_game():
     root.destroy()
