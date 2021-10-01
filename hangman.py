@@ -11,9 +11,11 @@ root.iconbitmap("death.ico")
 root.geometry("800x400")
 root.resizable(width=False, height=False)
 
+def disable_event():
+    pass
+
 pygame.mixer.init(44000, -16, 2, 512)
 music_state = False
-
 
 def play_music():
     global music_state
@@ -23,7 +25,8 @@ def play_music():
     else:
         pygame.mixer.music.load("game.mp3")
         pygame.mixer.music.play(loops=0)
-        music_state = not music_state #if it is in the same line of else music wont stop even if we close tha game
+        music_state = not music_state  # if it is in the same line of else music wont stop even if we close tha game
+
 
 def main_menu_():
     root.deiconify()
@@ -44,14 +47,14 @@ def main_menu_():
     canvas.create_image(0, 0, anchor=NW, image=main_menu_bg)
 
     # Add buttons to canvas
-    start_btn = Button(root, text="New Game", bg="bisque", width=15, command=new_game, borderwidth=5)
-    canvas.create_window(400, 150, anchor=E, window=start_btn)
+    start_btn = Button(root, text="New Game", bg="bisque", width=25, command=new_game, borderwidth=5)
+    canvas.create_window(500, 150, anchor=E, window=start_btn)
 
-    score_btn = Button(root, text="Score Board", bg="bisque", width=15, command=score_board, borderwidth=5)
-    canvas.create_window(400, 210, anchor=E, window=score_btn)
+    score_btn = Button(root, text="Score Board", bg="bisque", width=25, command=score_board, borderwidth=5)
+    canvas.create_window(500, 210, anchor=E, window=score_btn)
 
-    quit_btn = Button(root, text="Quit", bg="bisque", width=15, command=quit_game, borderwidth=5)
-    canvas.create_window(400, 270, anchor=E, window=quit_btn)
+    quit_btn = Button(root, text="Quit", bg="bisque", width=25, command=quit_game, borderwidth=5)
+    canvas.create_window(500, 270, anchor=E, window=quit_btn)
 
     sound_btn = Button(root, text="Sound", command=play_music)
     canvas.create_window(770, 380, anchor=SE, window=sound_btn)
@@ -68,6 +71,7 @@ def new_game():
     new_game_window.iconbitmap("death.ico")
     new_game_window.geometry("800x400")
     new_game_window.resizable(width=False, height=False)
+    new_game_window.protocol("WM_DELETE_WINDOW", disable_event)  # Disable window "X" (close) button
 
     # Create canvas and add background
     canvas_new_game = Canvas(new_game_window, width="800", height="450")
@@ -89,8 +93,8 @@ def new_game():
     var3 = StringVar(value="")
     var4 = StringVar(value="")
 
-    anime_btn = Checkbutton(new_game_window, text="Books", variable=var1, onvalue="a", offvalue="")
-    canvas_new_game.create_window(340, 120, anchor=CENTER, window=anime_btn)
+    books_btn = Checkbutton(new_game_window, text="Books", variable=var1, onvalue="b", offvalue="")
+    canvas_new_game.create_window(340, 120, anchor=CENTER, window=books_btn)
     games_btn = Checkbutton(new_game_window, text="Games", variable=var2, onvalue="g", offvalue="")
     canvas_new_game.create_window(440, 120, anchor=CENTER, window=games_btn)
     movies_btn = Checkbutton(new_game_window, text="Movies", variable=var3, onvalue="m", offvalue="")
@@ -108,8 +112,8 @@ def new_game():
                            , borderwidth=5)
     canvas_new_game.create_window(390, 260, anchor=CENTER, window=back_menu_btn)
 
-    # quit_game_btn = Button(new_game_window, text="Quit game", width=15, command=quit_game)
-    # canvas_new_game.create_window(390, 300, anchor=CENTER, window=quit_game_btn)
+    quit_game_btn = Button(new_game_window, text="Quit game", width=15, command=quit_game)
+    canvas_new_game.create_window(390, 300, anchor=CENTER, window=quit_game_btn)
 
     sound_btn = Button(new_game_window, text="Sound", command=play_music)
     canvas_new_game.create_window(770, 380, anchor=CENTER, window=sound_btn)
@@ -123,10 +127,10 @@ def prepare(choice):
     movies = open("movies list.txt", "r")  # Open word files
     games = open("games list.txt", "r")
     tv = open("tv shows list.txt", "r")
-    anime = open("books list.txt", "r")
+    books = open("books list.txt", "r")
     categories = ""
     file = open("temp.txt", "a+")  # File which will contain words from chosen categories
-    if "a" or "g" or "m" or "t" in choice:
+    if "b" or "g" or "m" or "t" in choice:
         if "m" in choice:
             categories += "Movies / "
             for i in movies.readlines():
@@ -139,13 +143,13 @@ def prepare(choice):
             categories += "TV-Shows / "
             for k in tv.readlines():
                 file.write(k)
-        if "a" in choice:
+        if "b" in choice:
             categories += "Books / "
-            for t in anime.readlines():
+            for t in books.readlines():
                 file.write(t)
         categories = categories[0:-3]  # Will go in label
     movies.close()  # Close word files
-    anime.close()
+    books.close()
     tv.close()
     games.close()
     file.close()
@@ -259,7 +263,7 @@ def option_b():
     used_check = True
     while used_check:
         random_num = random.randint(0, len_wordd)
-        char_reveal = wordd[random_num-1]
+        char_reveal = wordd[random_num - 1]
 
         if char_reveal not in chars_bank:
             chars_bank += char_reveal
@@ -276,7 +280,6 @@ def option_b():
                 if answer_ == 0:
                     quit_game()
                 else:
-
                     new_game_window.destroy()
                     play_window.destroy()
                     option_window.destroy()
@@ -405,12 +408,13 @@ def my_answer():
                 play_bg0 = ImageTk.PhotoImage(Image.open("hangman5.png").resize((300, 250), Image.ANTIALIAS))
                 canvas_play.background = play_bg0
                 canvas_play.create_image(0, 0, anchor=NW, image=play_bg0)
-                messagebox.showinfo("LOSER", "You lose!\nThe word was: " + wordd)
+                messagebox.showinfo("SUCKER", "You lose!\nThe word was: " + wordd)
                 answer_ = messagebox.askyesno("HangMan", "Would you like to play again?")
                 if answer_ == 0:
                     quit_game()
                 else:
-                    word_change=2
+                    word_change = 2  # if the user lost the game and wishes to play again, the assistance options (letter change and word change) don't reset, so added: word_change and letter_change
+                    letter_change=1
                     new_game_window.destroy()
                     play_window.destroy()
                     root.deiconify()
@@ -480,9 +484,9 @@ def play(hidden, word, count):
     upper_word_list = list(upper_word)
     chars_bank = ""
 
-    # letters_left_lbl = Label(play_window, text=str(counter) + " letters left to solve the word")
-    # canvas_play.create_window(400, 370, anchor=CENTER, window=letters_left_lbl)
-    #
+    letters_left_lbl = Label(play_window, text=str(counter) + " letters left to solve the word")
+    canvas_play.create_window(400, 370, anchor=CENTER, window=letters_left_lbl)
+
     underlines_lbl = Label(play_window, text=" ".join(under_lines))
     canvas_play.create_window(400, 310, anchor=CENTER, window=underlines_lbl)
 
@@ -497,6 +501,7 @@ def play(hidden, word, count):
                                              play_window.destroy(),
                                              new_game_window.destroy()])
     canvas_play.create_window(70, 370, anchor=CENTER, window=back_menu_btn_)
+
 
     e = Entry(play_window, width=4, borderwidth=2)
     canvas_play.create_window(380, 250, anchor=CENTER, window=e)
