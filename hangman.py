@@ -421,9 +421,6 @@ def my_answer():
 
     e.delete(0, "end")
 
-    # letters_left_lbl = Label(play_window, text=str(counter) + " letters left to solve the word")
-    # canvas_play.create_window(400, 370, anchor=CENTER, window=letters_left_lbl)
-
     list_chars_bank = list(chars_bank)
     bank_lbl = Label(play_window, text="Used characters bank:\n" + " ".join(list_chars_bank).upper())
     canvas_play.create_window(70, 270, anchor=CENTER, window=bank_lbl)
