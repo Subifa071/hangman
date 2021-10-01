@@ -22,6 +22,7 @@ The tools I have used for this project are as shown below:
 - [Python](https://www.python.org/) for making this game project.
 - [Pygame](https://www.pygame.org/wiki/GettingStarted) to support all the game functionalities. 
 - [Piktochart](https://piktochart.com/) for creating infographics.
+- [Pixel Art Maker](http://pixelartmaker.com/) to make button images.
 - [Mp3 Cutter](https://mp3cut.net/) to modify sound effects.
   
  ## Links
