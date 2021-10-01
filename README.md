@@ -28,7 +28,9 @@ The tools I have used for this project are as shown below:
 The links you can go through:
   - If you get any issues please contact subifamhrzn@gmail.com directly
     my@email.com . We value your effort to improve this project!
- <strong><h4> ABOUT MYSELF:-</h4></strong>
+  
+  
+  <strong><h4>ABOUT MYSELF:-</h4></strong>
    Subifa Maharjan<br>
    Student ID: 210270<br>
    Coventry ID:11781475<br>
