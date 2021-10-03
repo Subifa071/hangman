@@ -37,7 +37,7 @@ The links you can go through:
   <strong><h4>ABOUT MYSELF:-</h4></strong>
    Subifa Maharjan<br>
    Coventry ID:11781475<br>
-   Batch: June "Computing 30B"
+   Batch: June "Computing 30B"<br>
   Contact: <a href="mailto: subifamhrzn@gmail.com">subifamhrzn@gmail.com </a><br>
   <h5><i>Future Work:</h5>
   <ol type= a start=1>
