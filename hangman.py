@@ -5,25 +5,19 @@ from tkinter import messagebox
 import pygame
 import sqlite3
 
+music_state=False
 
 def gameregister():
     root = Toplevel()
     # connect to database
     connector = sqlite3.connect("Login.db")
     # we created cursor to invoke methods that execute sqlite statements,
-    # which fetch data from the result sets of the queries.
+    # which fetch data from the result sets of the quries.
     cur = connector.cursor()
     cur.execute("""CREATE TABLE IF NOT EXISTS  login_page (
-                   username text,
-                   password text) """)
+                       username text,
+                       password text) """)
     print("Table has been created successfully.")
-
-    # Window settings
-    root = Toplevel()
-    root.title("H_NGM_N")
-    root.iconbitmap("death.ico")
-    root.geometry("800x400")
-    root.resizable(width=False, height=False)
 
     def disable_event():
         pass
@@ -38,7 +32,7 @@ def gameregister():
         else:
             pygame.mixer.music.load("game.mp3")
             pygame.mixer.music.play(loops=0)
-            music_state = not music_state  
+            music_state = not music_state
 
     def main_menu_():
         """MAKE YOUR GUESSING GAME STRONG!"""
@@ -448,15 +442,15 @@ def gameregister():
         e.delete(0, "end")
 
         list_chars_bank = list(chars_bank)
-        bank_lbl = Label(play_window, text="Used characters bank:\n" + " ".join(list_chars_bank).upper(),
-                         font=('chocolate covered raindrops bol', 15))
+        bank_lbl = Label(play_window, text="Used characters bank:\n" + " ".join(list_chars_bank).upper())
+
         canvas_play.create_window(70, 270, anchor=CENTER, window=bank_lbl)
 
-        underlines_lbl = Label(play_window, text=" ".join(under_lines), font=('chocolate covered raindrops bol', 15))
+        underlines_lbl = Label(play_window, text=" ".join(under_lines))
         canvas_play.create_window(400, 310, anchor=CENTER, window=underlines_lbl)
 
-        guesses_lbl = Label(play_window, text="You have " + str(guesses) + " guesses left",
-                            font=('chocolate covered raindrops bol', 15))
+        guesses_lbl = Label(play_window, text="You have " + str(guesses) + " guesses left")
+
         canvas_play.create_window(400, 340, anchor=CENTER, window=guesses_lbl)
 
     def play(hidden, word, count):
@@ -510,19 +504,16 @@ def gameregister():
         upper_word_list = list(upper_word)
         chars_bank = ""
 
-        letters_left_lbl = Label(play_window, text=str(counter) + " letters left to solve the word", bg="#ccdb86",
-                                 font=('chocolate covered raindrops bol', 17))
+        letters_left_lbl = Label(play_window, text=str(counter) + " letters left to solve the word")
         canvas_play.create_window(400, 370, anchor=CENTER, window=letters_left_lbl)
 
-        underlines_lbl = Label(play_window, text=" ".join(under_lines), font=('chocolate covered raindrops bol', 15))
+        underlines_lbl = Label(play_window, text=" ".join(under_lines))
         canvas_play.create_window(400, 310, anchor=CENTER, window=underlines_lbl)
 
-        guesses_lbl = Label(play_window, text="You have " + str(guesses) + " guesses left", bg="#ccdb86",
-                            font=('chocolate covered raindrops bol', 17))
+        guesses_lbl = Label(play_window, text="You have " + str(guesses) + " guesses left")
         canvas_play.create_window(400, 340, anchor=CENTER, window=guesses_lbl)
 
-        bank_lbl = Label(play_window, text="Used characters bank:\n" + " ".join(list_chars_bank).upper(), bg="#dcb7c7",
-                         font=('chocolate covered raindrops bol', 15))
+        bank_lbl = Label(play_window, text="Used characters bank:\n" + " ".join(list_chars_bank).upper())
         canvas_play.create_window(70, 270, anchor=CENTER, window=bank_lbl)
 
         back_menu_btn_ = Button(play_window, text="Main Menu", bg="#c52626",
