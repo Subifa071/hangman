@@ -38,7 +38,7 @@ def gameregister():
         else:
             pygame.mixer.music.load("game.mp3")
             pygame.mixer.music.play(loops=0)
-            music_state = not music_state  # if it is in the same line of else music wont stop even if we close tha game
+            music_state = not music_state  
 
     def main_menu_():
         """MAKE YOUR GUESSING GAME STRONG!"""
