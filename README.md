@@ -16,7 +16,7 @@ The features and functionalities of the game "H_NGM_N" are mentioned below:
           <li> The user can turn on or off the music.
          </ol>
 
-  <p align = "center"><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F544865254911045739%2F&psig=AOvVaw3pUppEDa2FfiQQo2qBtu1X&ust=1645088205977000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCOiC_6Ltg_YCFQAAAAAdAAAAABAD" width="600">  
+  <p align = "center"><img src="https://media2.giphy.com/media/ybQIv0CsYm1XY9A8Dm/giphy.gif?cid=ecf05e47g58yq2u5mfswoe4r2ydbvoc2hjgdea6gc64iomef&rid=giphy.gif&ct=g" width="600">  
 
  ## Tools Used
 The tools I have used for this project are as shown below:
